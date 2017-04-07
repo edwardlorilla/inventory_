@@ -3,6 +3,10 @@
 
 @section('content')
     <div class="container">
+        <div class="btn-group" style="margin-bottom: 20px;">
+            <a href="{{route('brands.create')}}" class="btn btn-primary btn-flat"><span
+                        class="glyphicon glyphicon-plus"></span> Create</a>
+        </div>
         <table id="example" class="table table-bordered table-striped">
             <thead>
             <tr>

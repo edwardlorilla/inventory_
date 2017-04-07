@@ -19,7 +19,19 @@ class DepartmentTableSeeder extends Seeder
             ],
             [
                 'name' => 'dapartment2'
-            ]
+            ],
+            [
+                'name' => 'dapartment3'
+            ],
+            [
+                'name' => 'dapartment4'
+            ],
+            [
+                'name' => 'dapartment5'
+            ],
+            [
+                'name' => 'dapartment6'
+            ],
         ];
         DB::table('departments')->insert($departments);
     }

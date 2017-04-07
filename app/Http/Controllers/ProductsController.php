@@ -24,7 +24,10 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $brands = \App\Brand::pluck('name', 'id')->all();
+        $manufactures = \App\Manufacture::pluck('name', 'id')->all();
+        $descriptions = \App\Description::pluck('name', 'id')->all();
+        return view('products.create',  compact('brands', 'manufactures', 'descriptions'));
     }
 
     /**
@@ -35,9 +38,7 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-
-
+        \App\Product::create($request->all());
         return redirect(route('products.index'));
     }
 

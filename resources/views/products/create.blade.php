@@ -27,19 +27,16 @@
         </div>
         <div class="form-group">
             {!! Form::label('brand_id', ucfirst('brand:')) !!}
-            {!! Form::text('brand_id', null, ['class'=>'form-control']) !!}
+            {!! Form::select('brand_id', $brands ,null, ['class'=>'form-control'])!!}
         </div>
-
-        <div class="form-group">
-            {!! Form::label('manufacture_id', ucfirst('manufacture:')) !!}
-            {!! Form::text('manufacture_id', null, ['class'=>'form-control']) !!}
-        </div>
-
         <div class="form-group">
             {!! Form::label('description_id', ucfirst('description:')) !!}
-            {!! Form::text('description_id', null, ['class'=>'form-control']) !!}
+            {!! Form::select('description_id', $descriptions ,null, ['class'=>'form-control'])!!}
         </div>
-
+        <div class="form-group">
+            {!! Form::label('manufacture_id', ucfirst('manufacture:')) !!}
+            {!! Form::select('manufacture_id', $manufactures ,null, ['class'=>'form-control'])!!}
+        </div>
     </div><!-- /.box-body -->
     @include('_partial.error')
     <div class="box-footer">

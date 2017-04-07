@@ -27,3 +27,4 @@ Route::resource('departments', 'DepartmentsCobtroller');
 Route::resource('brands', 'BrandControllers');
 Route::resource('comments', 'CommentsControllers');
 Route::resource('descriptions', 'DescriptionController');
+Route::resource('transfers', 'TransferController');

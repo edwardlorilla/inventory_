@@ -12,12 +12,26 @@ class TranferTableSeeder extends Seeder
     public function run()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
-        DB::table('$tranfers')->truncate();
+        DB::table('tranfers')->truncate();
         $tranfers = [
             [
                 'product_id' => rand(1,5),
-            ]
+                'department_id' => rand(1,5),
+                'status' => rand(1,3),
+            ],[
+                'product_id' => rand(1,5),
+                'department_id' => rand(1,5),
+                'status' => rand(1,3),
+            ],[
+                'product_id' => rand(1,5),
+                'department_id' => rand(1,5),
+                'status' => rand(1,3),
+            ],[
+                'product_id' => rand(1,5),
+                'department_id' => rand(1,5),
+                'status' => rand(1,3),
+            ],
         ];
-        DB::table('$tranfers')->insert($tranfers);
+        DB::table('tranfers')->insert($tranfers);
     }
 }

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Categories')
+@section('title', 'Products')
 @section('content')
     <div class="container">
         <div class="btn-group" style="margin-bottom: 20px;">
@@ -10,18 +10,18 @@
             <thead>
             <tr>
                 <th class="nosort">ID</th>
-                <th>Name</th>
+                <th>Serial</th>
+                <th>Department</th>
             </tr>
             </thead>
             <tbody>
             @if($brands)
                 @foreach( $brands as $brand)
-                    @if($brand->status == 0 )
                         <tr>
                             <td>{{$brand->id}}</td>
-                            <td>{{$brand->name}}</td>
+                            <td>{{$brand->product->serial}}</td>
+                            <td>{{$brand->department->name}}</td>
                         </tr>
-                    @endif
 
                 @endforeach
 
