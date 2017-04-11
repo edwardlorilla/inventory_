@@ -14,10 +14,10 @@ class AddManufactureCategoryDescriptionIdToProduct extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->integer('manufacture_id');
-            $table->integer('category_id');
-            $table->integer('description_id');
-            $table->integer('location_id');
+            $table->integer('manufacture_id')->nullable()->unsigned();
+            $table->integer('category_id')->nullable()->unsigned();
+            $table->integer('description_id')->nullable()->unsigned();
+            $table->integer('location_id')->nullable()->unsigned();
         });
     }
 

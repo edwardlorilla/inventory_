@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -27,25 +28,37 @@ class ProductsController extends Controller
         $brands = \App\Brand::pluck('name', 'id')->all();
         $manufactures = \App\Manufacture::pluck('name', 'id')->all();
         $descriptions = \App\Description::pluck('name', 'id')->all();
-        return view('products.create',  compact('brands', 'manufactures', 'descriptions'));
+        $locations = \App\Location::pluck('name', 'id')->all();
+        $categories = \App\Category::pluck('name', 'id')->all();
+        return view('products.create', compact('brands', 'manufactures', 'descriptions', 'locations', 'categories'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        \App\Product::create($request->all());
-        return redirect(route('products.index'));
+        foreach ($request->quantity as $key => $value) {
+            \App\Product::create([
+                                    'quantity' => $request->quantity[$key],
+                                    'serial' => $request->serial[$key],
+                                    'manufacture_id' => $request->manufacture[$key],
+                                    'description_id' => $request->description[$key],
+                                    'location_id' => $request->location[$key],
+                                    'category_id' => $request->category[$key],
+                                    'brand_id' => $request->model[$key]
+                                ]);
+        }
+        return redirect(route('techitems.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -56,7 +69,7 @@ class ProductsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -67,8 +80,8 @@ class ProductsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -79,11 +92,10 @@ class ProductsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id = null, Request $request)
     {
-        //
     }
 }

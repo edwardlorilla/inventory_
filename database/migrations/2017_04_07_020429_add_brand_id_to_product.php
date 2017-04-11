@@ -14,7 +14,7 @@ class AddBrandIdToProduct extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->integer('brand_id');
+            $table->integer('brand_id')->nullable()->unsigned();
 
         });
     }

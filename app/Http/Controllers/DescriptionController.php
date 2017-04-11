@@ -24,7 +24,7 @@ class DescriptionController extends Controller
      */
     public function create()
     {
-        //
+        return view('descriptions.create');
     }
 
     /**
@@ -35,7 +35,8 @@ class DescriptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \App\Description::create($request->all());
+        return redirect(route('descriptions.index'));
     }
 
     /**

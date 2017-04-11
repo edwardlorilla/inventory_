@@ -15,7 +15,7 @@ class CreateTranfersTable extends Migration
     {
         Schema::create('tranfers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('department_id');
+            $table->integer('location_id')->default(0);
             $table->integer('product_id');
             $table->integer('status');
             $table->timestamps();

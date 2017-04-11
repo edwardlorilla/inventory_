@@ -9,7 +9,7 @@
         <h3 class="box-title">Create User</h3>
     </div><!-- /.box-header -->
     <!-- form start -->
-    {!! Form::open(['method'=>'POST', 'action'=>'BrandControllers@store' ] ) !!}
+    {!! Form::open(['method'=>'POST', 'action'=>'DescriptionController@store' ] ) !!}
 
 
     <div class="box-body">

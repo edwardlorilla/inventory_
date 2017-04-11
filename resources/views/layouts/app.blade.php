@@ -12,7 +12,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @extends('_partial.css')
+
+@yield('css')
+
+@extends('_partial.css')
 
 
 
@@ -40,7 +43,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="/">
+                    <a class="navbar-brand" href="{{route('createcfat.index')}}">
                         Inventory
                     </a>
                 </div>
@@ -48,11 +51,13 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav avbar-left">
-                        &nbsp;<li> <a  href="{{route('brands.index')}}">Brands</a></li>
-                        <li> <a  href="{{route('products.index')}}">Products</a></li>
+                        <li> <a  href="{{route('createcfat.create')}}">Create CFAT</a></li>
+                        <li> <a  href="{{route('descriptions.index')}}">Descriptions</a></li>
+                        &nbsp;<li> <a  href="{{route('brands.index')}}">Model</a></li>
+                        <li> <a  href="{{route('techitems.index')}}">Tech Items</a></li>
                         <li> <a  href="{{route('manufactures.index')}}">Manufactures</a></li>
                         <li> <a  href="{{route('locations.index')}}">Locations</a></li>
-                        <li> <a  href="{{route('departments.index')}}">Departments</a></li>
+{{--                        <li> <a  href="{{route('departments.index')}}">Departments</a></li>--}}
                         <li> <a  href="{{route('categories.index')}}">Categories</a></li>
                     </ul>
                 </div>
@@ -63,8 +68,9 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{--<script src="{{ asset('js/app.js') }}"></script>--}}
     @extends('_partial.js')
+    @yield('js')
 
 
 </body>

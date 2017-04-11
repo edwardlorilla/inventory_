@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::resource('users', 'UsersController');
-Route::resource('products', 'ProductsController');
+Route::resource('techitems', 'ProductsController');
 Route::resource('locations', 'LocationsController');
 Route::resource('manufactures', 'ManufacturesController');
 Route::resource('categories', 'CategoryController');
@@ -27,4 +27,5 @@ Route::resource('departments', 'DepartmentsCobtroller');
 Route::resource('brands', 'BrandControllers');
 Route::resource('comments', 'CommentsControllers');
 Route::resource('descriptions', 'DescriptionController');
-Route::resource('transfers', 'TransferController');
+Route::resource('createcfat', 'TransferController');
+Route::resource('descriptions', 'DescriptionController');

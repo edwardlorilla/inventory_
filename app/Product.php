@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-         'quantity', 'serial', 'manufacture_id', 'description_id', 
+         'quantity', 'serial', 'manufacture_id', 'description_id','location_id', 'category_id', 'brand_id'
     ];
     public function brand(){
         return $this->belongsTo(Brand::class);
@@ -20,6 +20,9 @@ class Product extends Model
     }
     public function description(){
         return $this->belongsTo(Description::class);
+    }
+    public function location(){
+        return $this->belongsTo(Location::class);
     }
 
 }

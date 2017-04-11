@@ -16,19 +16,19 @@ class TranferTableSeeder extends Seeder
         $tranfers = [
             [
                 'product_id' => rand(1,5),
-                'department_id' => rand(1,5),
+                'location_id' => rand(1,5),
                 'status' => rand(1,3),
             ],[
                 'product_id' => rand(1,5),
-                'department_id' => rand(1,5),
+                'location_id' => rand(1,5),
                 'status' => rand(1,3),
             ],[
                 'product_id' => rand(1,5),
-                'department_id' => rand(1,5),
+                'location_id' => rand(1,5),
                 'status' => rand(1,3),
             ],[
                 'product_id' => rand(1,5),
-                'department_id' => rand(1,5),
+                'location_id' => rand(1,5),
                 'status' => rand(1,3),
             ],
         ];

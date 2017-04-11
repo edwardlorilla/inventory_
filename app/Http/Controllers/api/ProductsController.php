@@ -14,10 +14,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = \App\Product::orderBy('created_at','desc')->get();
-        return response()->json([
-            'products' => $products
-        ]);
+
     }
 
     /**
